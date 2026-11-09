@@ -1,2 +1,4 @@
 .gitignore
 score.json
+.venv/
+__pycache__/
