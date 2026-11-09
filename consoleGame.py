@@ -25,6 +25,9 @@ def correct_input(user_input):
     user_input = user_input.lower().strip()
     if user_input in valid_choices:
         return user_input
+    choices_in_input = [choice for choice in choices if choice in user_input]
+    if len(choices_in_input) > 1:
+        return None
     closest_match = difflib.get_close_matches(user_input, valid_choices, n=1, cutoff=0.6)
     if closest_match:
         return closest_match[0]
